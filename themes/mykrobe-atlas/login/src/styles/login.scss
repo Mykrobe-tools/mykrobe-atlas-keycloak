@@ -1,0 +1,18 @@
+@import '~mykrobe-atlas/app/styles/app.global.scss';
+@import 'common/styles/login.scss';
+
+body {
+  background-color: $color-background;
+}
+
+div.kc-logo-text {
+  // 2088x950
+  padding-bottom: 100% * 950 / 2088;
+  background: url(~mykrobe-atlas/app/static/atlas-tb-logo.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.card-pf {
+  background-color: white;
+}

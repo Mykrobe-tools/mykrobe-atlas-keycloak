@@ -1,0 +1,13 @@
+package.json
+__mocks__
+__fixtures__
+flow-typed
+.vscode
+themes/base
+themes/keycloak
+themes/keycloak-preview
+themes/mykrobe-atlas/login/resources
+themes/carereport/login/resources
+themes/carereport-app/login/resources
+themes/rightbreathe/login/resources
+themes/mend/login/resources

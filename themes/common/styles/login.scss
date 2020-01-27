@@ -1,0 +1,27 @@
+h1 {
+  font-size: 2rem;
+}
+
+div.kc-logo-text span {
+  display: none;
+}
+
+.form-group {
+  .checkbox {
+    input[type='checkbox'] {
+      margin: 0;
+      position: static;
+    }
+  }
+}
+
+#kc-form-options {
+  margin-bottom: 1rem;
+}
+
+// form errors
+
+.alert {
+  padding: 0;
+  border: none;
+}
