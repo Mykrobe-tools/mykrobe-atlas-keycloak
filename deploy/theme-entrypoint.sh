@@ -3,7 +3,7 @@ set -e
 
 ls -la /app/themes/
 
-cp -R /app/themes /app/dist/
+cp -R /app/themes/ /app/dist/
 
 ls -la /app/dist/
 
