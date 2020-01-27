@@ -34,6 +34,7 @@ ADD ./deploy/ssh-config /root/.ssh/config
 # keys for mykrobe libraries
 ADD ./bitbucket-readonly /root/.ssh/
 ADD ./atlas-readonly /root/.ssh/
+ADD ./atlas-keycloak-readonly /root/.ssh/
 ADD ./atlas-jsonschema-readonly /root/.ssh/
 
 RUN chmod 600 /root/.ssh/atlas-readonly && \
@@ -56,6 +57,7 @@ RUN cd /app && yarn install
 # Remove SSH keys
 RUN rm /app/bitbucket-readonly
 RUN rm /app/atlas-readonly
+RUN rm /app/atlas-keycloak-readonly
 RUN rm /app/atlas-jsonschema-readonly
 RUN rm -rf /root/.ssh
 

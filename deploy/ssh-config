@@ -1,0 +1,29 @@
+Host bitbucket.org
+Hostname bitbucket.org
+IdentityFile /root/.ssh/bitbucket-readonly
+User git
+IdentitiesOnly yes
+
+Host client.atlas.github.com
+Hostname github.com
+IdentityFile /root/.ssh/atlas-readonly
+User git
+IdentitiesOnly yes
+
+Host api.atlas.github.com
+Hostname github.com
+IdentityFile /root/.ssh/atlas-api-readonly
+User git
+IdentitiesOnly yes
+
+Host keycloak.atlas.github.com
+Hostname github.com
+IdentityFile /root/.ssh/atlas-keycloak-readonly
+User git
+IdentitiesOnly yes
+
+Host github.com
+Hostname github.com
+IdentityFile /root/.ssh/atlas-jsonschema-readonly
+User git
+IdentitiesOnly yes

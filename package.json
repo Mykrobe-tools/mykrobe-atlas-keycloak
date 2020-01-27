@@ -1,16 +1,10 @@
 {
-  "name": "makeandship-keycloak-themes",
+  "name": "mykrobe-atlas-keycloak",
   "private": true,
   "version": "1.1.0",
   "config": {
     "keycloak": {
       "local": {
-        "git": {
-          "sns": {
-            "repo": "makeandship/keycloak-sms-authenticator-sns",
-            "branch": "develop"
-          }
-        },
         "log": {
           "root": "INFO",
           "keycloak": "INFO"
@@ -33,7 +27,6 @@
     "autoprefixer": "^9.5.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "carereport-client": "git+ssh://git@bitbucket.org:makeandship/carereport-client",
     "clean-webpack-plugin": "^2.0.0",
     "cross-env": "^5.1.1",
     "css-loader": "^2.1.0",
@@ -42,7 +35,6 @@
     "eslint-plugin-import": "^2.16.0",
     "file-loader": "^3.0.0",
     "makeandship-js-common": "git+ssh://git@bitbucket.org:makeandship/makeandship-js-common#v0.0.69",
-    "mend-client": "git+ssh://git@bitbucket.org:makeandship/mend-client",
     "mini-css-extract-plugin": "^0.5.0",
     "mykrobe-atlas": "git+ssh://git@client.atlas.github.com/Mykrobe-tools/mykrobe-atlas#develop",
     "node-sass": "^4.11.0",
@@ -61,12 +53,12 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "docker:clean": "yarn docker:stop:containers && yarn docker:remove:containers && yarn docker:remove:images &&",
     "docker:remove:containers": "docker rm $(docker ps -aq)",
-    "docker:remove:data": "yarn docker:stop && docker volume rm makeandship-keycloak-themes_postgres_data",
+    "docker:remove:data": "yarn docker:stop && docker volume rm mykrobe-atlas-keycloak_postgres_data",
     "docker:remove:images": "docker rmi $(docker images -q)",
     "docker:start": "docker-compose up &",
     "docker:stop": "docker-compose down",
     "docker:stop:containers": "docker stop $(docker ps -aq)",
-    "keycloak:local:docker": "KEYCLOAK_LOGLEVEL=$npm_package_config_keycloak_local_log_keycloak ROOT_LOGLEVEL=$npm_package_config_keycloak_local_log_root SMS_AUTH_GIT_REPO=$npm_package_config_keycloak_local_git_sns_repo SMS_AUTH_GIT_BRANCH=$npm_package_config_keycloak_local_git_sns_branch docker-compose -f deploy/local-docker-compose.yml up",
+    "keycloak:local:docker": "KEYCLOAK_LOGLEVEL=$npm_package_config_keycloak_local_log_keycloak ROOT_LOGLEVEL=$npm_package_config_keycloak_local_log_root docker-compose -f deploy/local-docker-compose.yml up",
     "keycloak:local": "yarn build && yarn keycloak:local:docker",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint ./",
