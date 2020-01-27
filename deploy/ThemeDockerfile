@@ -11,6 +11,7 @@ RUN apt update
 RUN apt install -y curl 
 RUN apt install -y ssh
 RUN apt install -y git
+RUN apt install -y zip unzip
 
 # download and install nvm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash \
