@@ -37,9 +37,10 @@ ADD ./atlas-readonly /root/.ssh/
 ADD ./atlas-keycloak-readonly /root/.ssh/
 ADD ./atlas-jsonschema-readonly /root/.ssh/
 
-RUN chmod 600 /root/.ssh/atlas-readonly && \
-	chmod 600 /root/.ssh/atlas-keycloak-readonly && \
-	chmod 600 /root/.ssh/atlas-jsonschema-readonly && \
+RUN chmod 400 /root/.ssh/atlas-readonly && \
+	chmod 400 /root/.ssh/atlas-keycloak-readonly && \
+	chmod 400 /root/.ssh/atlas-jsonschema-readonly && \
+	chmod 400 /root/.ssh/bitbucket-readonly && \
     ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts && \
     ssh-keyscan github.com >> /root/.ssh/known_hosts
 
