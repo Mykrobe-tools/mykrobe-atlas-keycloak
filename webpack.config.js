@@ -37,7 +37,7 @@ const baseConfig = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules\/(?!(makeandship-js-common|makeandship-api-common|mykrobe-atlas|mykrobe-atlas-jsonschema|carereport-client|mend-client))/,
+        exclude: /node_modules\/(?!(makeandship-js-common|makeandship-api-common|mykrobe-atlas|mykrobe-atlas-jsonschema))/,
       },
       // IMAGES
       {
@@ -191,23 +191,7 @@ const themes = [
   {
     name: 'mykrobe-atlas',
     modules: [path.join(__dirname, 'node_modules/mykrobe-atlas/app')],
-  },
-  {
-    name: 'carereport',
-    modules: [path.join(__dirname, 'node_modules/carereport-client/app')],
-  },
-  {
-    name: 'carereport-app',
-    modules: [path.join(__dirname, 'node_modules/carereport-client/app')],
-  },
-  {
-    name: 'rightbreathe',
-    modules: [path.join(__dirname, 'node_modules/makeandship-js-common/src')],
-  },
-  {
-    name: 'mend',
-    modules: [path.join(__dirname, 'node_modules/mend-client/app')],
-  },
+  }
 ];
 
 const configurations = themes.map(({ name, modules }) => {
