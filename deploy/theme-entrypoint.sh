@@ -11,4 +11,4 @@ cp -R /app/themes/mykrobe-atlas /app/dist/
 
 ls -la /app/dist/
 
-cd /app/dist/ && zip -r ./mykrobe-atlas.zip ./mykrobe-atlas/
+cd /app/dist/ && zip -r ./mykrobe-atlas-themes.zip ./
