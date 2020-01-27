@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM jboss/keycloak:8.0.1
 LABEL MAINTAINER="Mark Thomsit<mark@makeandship.com>"
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -66,7 +66,9 @@ RUN rm -rf /root/.ssh
 
 RUN cd /app && yarn build
 
-ADD ./deploy/theme-entrypoint.sh /app/theme-entrypoint.sh
+ADD ./themes/mykrobe-atlas /opt/jboss/keycloak/themes/mykrobe-atlas
 
-# build themes
-ENTRYPOINT ["/app/theme-entrypoint.sh"]
+# turn off theme caching
+RUN sed -i 's#<cacheThemes>true</cacheThemes>#<cacheThemes>false</cacheThemes>#g' /opt/jboss/keycloak/standalone/configuration/standalone.xml
+RUN sed -i 's#<cacheTemplates>true</cacheTemplates>#<cacheTemplates>false</cacheTemplates>#g' /opt/jboss/keycloak/standalone/configuration/standalone.xml
+
