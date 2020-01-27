@@ -3,4 +3,4 @@ set -e
 
 cp -R /app/themes /app/dist/
 
-zip -r /dist/mykrobe-atlas.zip /dist/mykrobe-atlas/
+zip -r /app/dist/mykrobe-atlas.zip /app/dist/mykrobe-atlas/
