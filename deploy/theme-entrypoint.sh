@@ -10,5 +10,3 @@ cp -R /app/themes/mykrobe-atlas /app/dist/
 cd /app/dist/ && zip -r ./mykrobe-atlas-themes.zip ./
 
 ls -la /app/dist/
-
-sleep 5m
