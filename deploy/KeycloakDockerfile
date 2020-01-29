@@ -1,7 +1,7 @@
 FROM jboss/keycloak:8.0.1
 LABEL MAINTAINER="Mark Thomsit <mark@makeandship.com>"
 
-ADD /go/pipelines/build-keycloak/mykrobe-atlas-themes.zip /opt/jboss/keycloak/themes/
+ADD mykrobe-atlas-themes.zip /opt/jboss/keycloak/themes/
 RUN unzip -r /opt/jboss/keycloak/themes/mykrobe-atlas-themes.zip
 
 # turn off theme caching
