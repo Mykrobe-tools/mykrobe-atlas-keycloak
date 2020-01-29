@@ -7,6 +7,6 @@ cp -R /app/themes/keycloak /app/dist/
 cp -R /app/themes/keycloak-preview /app/dist/
 cp -R /app/themes/mykrobe-atlas /app/dist/
 
-cd /app/dist/ && tar -cv ./ | gzip > mykrobe-atlas-themes.tar.gz
+cd /app/dist/ && tar -cvzf mykrobe-atlas-themes.tar.gz ./ 
 
 ls -la /app/dist/
