@@ -1,14 +1,7 @@
 FROM jboss/keycloak:8.0.1
 LABEL MAINTAINER="Mark Thomsit <mark@makeandship.com>"
 
-USER root
-RUN ls /opt/jboss/keycloak/
-ADD mykrobe-atlas-themes.tar.gz /opt/jboss/keycloak/
-RUN ls /opt/jboss/keycloak/
-RUN ls /opt/jboss/keycloak/themes/
-RUN cd /opt/jboss/keycloak/ && tar -zxvf mykrobe-atlas-themes.tar.gz --directory /opt/jboss/keycloak/themes
-RUN ls /opt/jboss/keycloak/themes/
-USER 1000
+ADD mykrobe-atlas-themes.tar.gz /opt/jboss/keycloak/themes/
 
 # turn off theme caching
 RUN sed -i 's#<cacheThemes>true</cacheThemes>#<cacheThemes>false</cacheThemes>#g' /opt/jboss/keycloak/standalone/configuration/standalone.xml
