@@ -2,10 +2,8 @@ FROM jboss/keycloak:9.0.2
 LABEL MAINTAINER="Mark Thomsit <mark@makeandship.com>"
 
 ADD mykrobe-atlas-themes.tar.gz /opt/jboss/keycloak/themes/
+ADD realms/atlas-realm.json /tmp/atlas-realm.json
 
 # turn off theme caching
 RUN sed -i 's#<cacheThemes>true</cacheThemes>#<cacheThemes>false</cacheThemes>#g' /opt/jboss/keycloak/standalone/configuration/standalone.xml
 RUN sed -i 's#<cacheTemplates>true</cacheTemplates>#<cacheTemplates>false</cacheTemplates>#g' /opt/jboss/keycloak/standalone/configuration/standalone.xml
-
-#ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
-#CMD ["-b", "0.0.0.0"]
